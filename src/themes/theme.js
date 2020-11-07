@@ -12,5 +12,6 @@ export default {
     background: "#FFF4CB",
     text: "#2D2D2D",
     button: "#F2777A",
+    secondary: "#777C85",
   },
 }

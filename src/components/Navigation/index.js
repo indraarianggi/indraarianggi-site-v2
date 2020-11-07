@@ -56,7 +56,7 @@ const NavWrapper = styled.nav`
 
 const LinkItem = styled(props => <Link {...props} />)`
   color: ${props => props.theme.colors.text};
-  padding: 2px 4px;
+  padding: 0.5em 1em;
   text-decoration: none;
 
   .active {
@@ -73,8 +73,6 @@ const LinkItem = styled(props => <Link {...props} />)`
   }
 
   @media ${props => props.theme.breakpoints.large} {
-    margin-left: 30px;
-
     .icon {
       display: none;
     }

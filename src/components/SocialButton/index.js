@@ -27,7 +27,7 @@ const SocialButton = ({ type, href }) => {
 const ButtonWrapper = styled.a`
   color: ${props => props.theme.colors.text};
   background-color: transparent;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5em 1em;
   transition: all 300ms ease-in-out;
 
   &:hover {

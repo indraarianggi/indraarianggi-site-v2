@@ -19,7 +19,7 @@ const ButtonInternal = styled(props => <Link {...props} />)`
   background-color: ${props => props.theme.colors.button};
   font-weight: 600;
   display: inline-block;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5em 1em;
   text-decoration: none;
   box-shadow: 6px 6px ${props => props.theme.colors.text};
   transition: all 300ms ease-in-out;
@@ -35,7 +35,7 @@ const ButtonExternal = styled.a`
   background-color: ${props => props.theme.colors.button};
   font-weight: 600;
   display: inline-block;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5em 1em;
   text-decoration: none;
   box-shadow: 6px 6px ${props => props.theme.colors.text};
   transition: all 300ms ease-in-out;

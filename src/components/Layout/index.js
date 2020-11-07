@@ -14,11 +14,6 @@ const Layout = ({ children }) => {
 }
 
 const Wrapper = styled.div`
-  /* min-height: 100vh; */
-
-  @media ${props => props.theme.breakpoints.medium} {
-  }
-
   @media ${props => props.theme.breakpoints.large} {
     max-width: 800px;
     margin: 0 auto;
@@ -26,7 +21,7 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.main`
-  padding: 15px;
+  padding: 30px 15px;
 `
 
 export default Layout

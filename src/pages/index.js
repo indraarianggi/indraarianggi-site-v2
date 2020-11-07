@@ -26,7 +26,7 @@ const Home = () => {
           style={{ width: "100%" }}
         />
         <div className="introduction">
-          <Heading color="yellow">Hi, I'm Indra Arianggi</Heading>
+          <Heading>Hi, I'm Indra Arianggi</Heading>
           <p className="description">
             A Full Stack Web Developer, currently focused on exploring the world
             of Front-end with React.
@@ -67,7 +67,7 @@ const Container = styled.div`
   }
 
   @media ${props => props.theme.breakpoints.large} {
-    min-height: 75vh;
+    min-height: 70vh;
   }
 `
 
