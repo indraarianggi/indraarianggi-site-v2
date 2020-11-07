@@ -64,6 +64,10 @@ const Container = styled.div`
     grid-template-columns: 1fr 2fr;
     gap: 30px;
     align-items: center;
+
+    .profile-pic {
+      margin-bottom: 0;
+    }
   }
 
   @media ${props => props.theme.breakpoints.large} {

@@ -43,7 +43,7 @@ exports.createPages = async ({ actions, graphql }) => {
     post => post.node.frontmatter.category === "blog"
   )
   const blogNumPages = Math.ceil(blogPosts.length / postsPerPage)
-  // Creating blog list with pagination
+  // Creating blog page with pagination
   Array.from({ length: blogNumPages }).forEach((_, i) => {
     actions.createPage({
       path: i === 0 ? "/blog" : `/blog/page/${i + 1}`,
@@ -53,6 +53,25 @@ exports.createPages = async ({ actions, graphql }) => {
         skip: i * postsPerPage,
         currentPage: i + 1,
         numPages: blogNumPages,
+      },
+    })
+  })
+
+  // Work content
+  const workPosts = data.allMarkdownRemark.edges.filter(
+    post => post.node.frontmatter.category === "work"
+  )
+  const workNumPages = Math.ceil(workPosts.length / postsPerPage)
+  // Creating work page with pagination
+  Array.from({ length: workNumPages }).forEach((_, i) => {
+    actions.createPage({
+      path: i === 0 ? "/work" : `/work/page/${i + 1}`,
+      component: path.resolve("./src/templates/Work.js"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        currentPage: i + 1,
+        numPages: workNumPages,
       },
     })
   })
