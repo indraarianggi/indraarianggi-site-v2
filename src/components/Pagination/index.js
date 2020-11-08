@@ -28,7 +28,7 @@ const Pagination = ({ currentPage, numPages, context }) => {
 const PaginationWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 50px;
 `
 
 const PaginationItem = styled(props => <Link {...props} />)`

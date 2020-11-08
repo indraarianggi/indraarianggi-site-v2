@@ -2,13 +2,22 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-const Button = ({ children, href, linkType }) => {
+const Button = ({ children, href, linkType, shadow }) => {
   if (linkType === "internal") {
-    return <ButtonInternal to={href}>{children}</ButtonInternal>
+    return (
+      <ButtonInternal to={href} className={shadow ? "shadow" : ""}>
+        {children}
+      </ButtonInternal>
+    )
   }
 
   return (
-    <ButtonExternal href={href} target="_blank" rel="noopener noreferrer">
+    <ButtonExternal
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={shadow ? "shadow" : ""}
+    >
       {children}
     </ButtonExternal>
   )
@@ -21,10 +30,13 @@ const ButtonInternal = styled(props => <Link {...props} />)`
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  box-shadow: 6px 6px ${props => props.theme.colors.text};
   transition: all 300ms ease-in-out;
 
-  &:hover {
+  &.shadow {
+    box-shadow: 6px 6px ${props => props.theme.colors.text};
+  }
+
+  &.shadow:hover {
     box-shadow: none;
     transform: translate(6px, 6px);
   }
@@ -37,10 +49,18 @@ const ButtonExternal = styled.a`
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  box-shadow: 6px 6px ${props => props.theme.colors.text};
   transition: all 300ms ease-in-out;
 
+  &.shadow {
+    box-shadow: 6px 6px ${props => props.theme.colors.text};
+  }
+
   &:hover {
+    opacity: 0.9;
+  }
+
+  &.shadow:hover {
+    opacity: 1;
     box-shadow: none;
     transform: translate(6px, 6px);
   }

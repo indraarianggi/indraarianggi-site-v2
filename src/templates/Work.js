@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import PostContainer from "../components/PostContainer"
+import PostListContainer from "../components/PostListContainer"
 import Pagination from "../components/Pagination"
 
 const Work = ({ data, pageContext }) => {
@@ -20,7 +20,7 @@ const Work = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <PostContainer posts={posts} />
+      <PostListContainer posts={posts} />
       <Pagination
         currentPage={currentPage}
         numPages={numPages}

@@ -20,11 +20,13 @@ const Home = () => {
   return (
     <Layout>
       <Container>
-        <Image
-          fixed={data.imageSharp.fixed}
-          className="profile-pic"
-          style={{ width: "100%" }}
-        />
+        <div className="profile-pic">
+          <Image
+            fixed={data.imageSharp.fixed}
+            style={{ width: "100%", height: "100%" }}
+            alt="Indra Arianggi"
+          />
+        </div>
         <div className="introduction">
           <Heading>Hi, I'm Indra Arianggi</Heading>
           <p className="description">
@@ -34,6 +36,7 @@ const Home = () => {
           <Button
             href="https://www.linkedin.com/in/indraarianggi/"
             linkType="external"
+            shadow
           >
             Know Me More
           </Button>
@@ -47,16 +50,18 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   min-height: 100vh;
 
   .profile-pic {
-    border: 3px solid #2d2d2d;
+    align-self: center;
     margin-bottom: 30px;
+    border: 3px solid #2d2d2d;
+    width: 250px;
+    height: 300px;
   }
 
   .description {
-    margin-bottom: 30px;
+    margin: 20px 0 30px 0;
   }
 
   @media ${props => props.theme.breakpoints.medium} {
