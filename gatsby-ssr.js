@@ -1,6 +1,9 @@
 import React from "react"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import Theme from "./src/themes/theme"
+import "prismjs/themes/prism-okaidia.css"
+import "prismjs/plugins/line-numbers/prism-line-numbers.css"
+import "./src/styles/prism-code-style.css"
 
 const GlobalStyles = createGlobalStyle`
     * {
