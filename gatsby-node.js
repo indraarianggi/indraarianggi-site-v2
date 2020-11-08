@@ -75,4 +75,15 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     })
   })
+
+  // Creating post page
+  data.allMarkdownRemark.edges.forEach(post => {
+    actions.createPage({
+      path: post.node.fields.slug,
+      component: path.resolve("./src/templates/Post.js"),
+      context: {
+        slug: post.node.fields.slug,
+      },
+    })
+  })
 }
