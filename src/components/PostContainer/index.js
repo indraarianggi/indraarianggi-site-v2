@@ -7,14 +7,14 @@ import PostBody from "../PostBody"
 import ProfileCard from "../ProfileCard"
 
 const PostContainer = ({ frontmatter, html }) => {
-  const { title, date, tags, featureImage } = frontmatter
+  const { title, date, category, tags, featureImage } = frontmatter
 
   return (
     <Container>
       <Heading>{title}</Heading>
       <div className="info">
         {date}
-        <Tags tags={tags} />
+        <Tags category={category} tags={tags} />
       </div>
       <Image
         fixed={featureImage.childImageSharp.fixed}

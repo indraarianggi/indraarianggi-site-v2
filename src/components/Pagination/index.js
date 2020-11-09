@@ -2,13 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-const Pagination = ({ currentPage, numPages, context }) => {
+const Pagination = ({ currentPage, numPages, context, tag = null }) => {
   if (numPages <= 1) return null
 
   const paginationItems = Array.from({ length: numPages }).map((_, i) => {
     const index = i + 1
 
-    const baseLink = `/${context}`
+    const baseLink = tag ? `/${context}/tag/${tag}` : `/${context}`
     const link = index === 1 ? baseLink : `${baseLink}/page/${index}`
 
     return (

@@ -12,6 +12,7 @@ const Blog = ({ data, pageContext }) => {
     return {
       title: frontmatter.title,
       date: frontmatter.date,
+      category: frontmatter.category,
       tags: frontmatter.tags,
       slug: fields.slug,
       featureImage: frontmatter.featureImage.childImageSharp.fixed,
@@ -43,9 +44,10 @@ export const blogPostsQuery = graphql`
       edges {
         node {
           frontmatter {
-            tags
-            date(formatString: "MMMM DD, YYY")
             title
+            date(formatString: "MMMM DD, YYY")
+            category
+            tags
             featureImage {
               publicURL
               childImageSharp {

@@ -19,9 +19,10 @@ export const postQuery = graphql`
       html
       frontmatter {
         title
+        date(formatString: "MMMM DD, YYY")
+        category
         tags
         excerpt
-        date(formatString: "MMMM DD, YYYY")
         featureImage {
           publicURL
           childImageSharp {

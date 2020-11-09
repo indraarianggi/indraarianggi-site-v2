@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Image from "gatsby-image"
 import Tags from "../Tags"
 
-const PostCard = ({ title, date, tags, slug, featureImage }) => {
+const PostCard = ({ title, date, category, tags, slug, featureImage }) => {
   return (
     <Card to={slug}>
       <Image
@@ -16,7 +16,7 @@ const PostCard = ({ title, date, tags, slug, featureImage }) => {
         <h2>{title}</h2>
         <span className="info">{date}</span>
       </div>
-      <Tags tags={tags} />
+      <Tags category={category} tags={tags} />
     </Card>
   )
 }
