@@ -2,11 +2,14 @@ module.exports = {
   siteMetadata: {
     title: "Indra Arianggi",
     description:
-      "Personal site by Indra Arianggi. Contains a profile, work portfolio, and several blog articles about technology, work, and hobbies.",
+      "Personal site by Indra Arianggi. Contains a profile, work portfolios, and blog articles about technology, work, and hobbies.",
     url: "https://www.indraarianggi.com",
+    image: "/indraarianggi.jpg",
+    themeColor: "#FFF4CB",
     year: "2020",
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

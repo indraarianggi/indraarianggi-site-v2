@@ -4,10 +4,16 @@ import Layout from "../components/Layout"
 import PostListContainer from "../components/PostListContainer"
 import Pagination from "../components/Pagination"
 
-const Work = ({ data, pageContext }) => {
+const Work = ({ data, pageContext, location }) => {
+  const { allMarkdownRemark, site } = data
   const { currentPage, numPages } = pageContext
 
-  let posts = data.allMarkdownRemark.edges.map(post => {
+  const seo = {
+    title: `${site.siteMetadata.title} - Work`,
+    pathname: location.pathname,
+  }
+
+  let posts = allMarkdownRemark.edges.map(post => {
     const { fields, frontmatter } = post.node
     return {
       title: frontmatter.title,
@@ -20,7 +26,7 @@ const Work = ({ data, pageContext }) => {
   })
 
   return (
-    <Layout>
+    <Layout seo={seo}>
       <PostListContainer posts={posts} />
       <Pagination
         currentPage={currentPage}
@@ -61,6 +67,11 @@ export const workPostsQuery = graphql`
             slug
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
       }
     }
   }

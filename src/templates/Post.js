@@ -3,9 +3,24 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import PostContainer from "../components/PostContainer"
 
-const Post = ({ data }) => {
+const Post = ({ data, location }) => {
+  const {
+    title,
+    category,
+    excerpt,
+    featureImage,
+  } = data.markdownRemark.frontmatter
+
+  const seo = {
+    title: `${category.charAt(0).toUpperCase()}${category.slice(1)} - ${title}`,
+    description: excerpt,
+    pathname: location.pathname,
+    image: featureImage.publicURL,
+    isArticle: true,
+  }
+
   return (
-    <Layout>
+    <Layout seo={seo}>
       <PostContainer {...data.markdownRemark} />
     </Layout>
   )

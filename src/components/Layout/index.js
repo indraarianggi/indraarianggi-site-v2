@@ -2,10 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import Navigation from "../Navigation"
 import Footer from "../Footer"
+import Seo from "../Seo"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, seo }) => {
   return (
     <Wrapper>
+      <Seo {...seo} />
       <Navigation />
       <Content>{children}</Content>
       <Footer />
