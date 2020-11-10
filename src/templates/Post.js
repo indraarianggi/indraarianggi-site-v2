@@ -15,7 +15,7 @@ const Post = ({ data, location }) => {
     title: `${category.charAt(0).toUpperCase()}${category.slice(1)} - ${title}`,
     description: excerpt,
     pathname: location.pathname,
-    image: featureImage.publicURL,
+    image: featureImage ? featureImage.publicURL : null,
     isArticle: true,
   }
 

@@ -5,7 +5,7 @@ import PostListContainer from "../components/PostListContainer"
 import Pagination from "../components/Pagination"
 
 const Blog = ({ data, pageContext, location }) => {
-  const { allMarkdownRemark, site } = data
+  const { allMarkdownRemark, site, imageSharp } = data
   const { currentPage, numPages } = pageContext
 
   const seo = {
@@ -21,7 +21,9 @@ const Blog = ({ data, pageContext, location }) => {
       category: frontmatter.category,
       tags: frontmatter.tags,
       slug: fields.slug,
-      featureImage: frontmatter.featureImage.childImageSharp.fixed,
+      featureImage: frontmatter.featureImage
+        ? frontmatter.featureImage.childImageSharp.fixed
+        : imageSharp.fixed,
     }
   })
 
@@ -72,6 +74,11 @@ export const blogPostsQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    imageSharp(fixed: { originalName: { eq: "default-image.png" } }) {
+      fixed {
+        ...GatsbyImageSharpFixed
       }
     }
   }

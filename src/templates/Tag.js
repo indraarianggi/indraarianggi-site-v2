@@ -5,10 +5,18 @@ import Layout from "../components/Layout"
 import PostListContainer from "../components/PostListContainer"
 import Pagination from "../components/Pagination"
 
-const Tag = ({ data, pageContext }) => {
+const Tag = ({ data, pageContext, location }) => {
+  const { allMarkdownRemark, site, imageSharp } = data
   const { tag, category, currentPage, numPages } = pageContext
 
-  let posts = data.allMarkdownRemark.edges.map(post => {
+  const seo = {
+    title: `${site.siteMetadata.title} - ${category
+      .charAt(0)
+      .toUpperCase()}${category.slice(1)}: ${tag}`,
+    pathname: location.pathname,
+  }
+
+  let posts = allMarkdownRemark.edges.map(post => {
     const { fields, frontmatter } = post.node
     return {
       title: frontmatter.title,
@@ -16,12 +24,14 @@ const Tag = ({ data, pageContext }) => {
       category: frontmatter.category,
       tags: frontmatter.tags,
       slug: fields.slug,
-      featureImage: frontmatter.featureImage.childImageSharp.fixed,
+      featureImage: frontmatter.featureImage
+        ? frontmatter.featureImage.childImageSharp.fixed
+        : imageSharp.fixed,
     }
   })
 
   return (
-    <Layout>
+    <Layout seo={seo}>
       <PageTitle>
         <span className="category">{category}</span> posts with{" "}
         <TagName to={`/${category}`}>{tag}</TagName> tag.
@@ -104,6 +114,16 @@ export const tagPostsQuery = graphql`
             slug
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    imageSharp(fixed: { originalName: { eq: "default-image.png" } }) {
+      fixed {
+        ...GatsbyImageSharpFixed
       }
     }
   }
