@@ -11,7 +11,7 @@ import {
 const Navigation = () => {
   return (
     <NavWrapper>
-      <LinkItem to="/" activeClassName="active" partiallyActive={true}>
+      <LinkItem to="/" activeClassName="active">
         <FontAwesomeIcon icon={faHome} size="lg" className="icon" />
         <span className="text">Home</span>
       </LinkItem>
@@ -28,8 +28,7 @@ const Navigation = () => {
 }
 
 const NavWrapper = styled.nav`
-  background-color: ${props => props.theme.colors.button};
-  font-weight: 600;
+  background-color: ${props => props.theme.colors.background};
   position: fixed;
   bottom: 0;
   left: 0;
@@ -39,16 +38,17 @@ const NavWrapper = styled.nav`
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
+  border-top: 3px solid ${props => props.theme.colors.text};
   box-shadow: 0 -2px 6px 0 rgba(0, 0, 0, 0.2);
   z-index: 2;
 
   @media ${props => props.theme.breakpoints.large} {
-    background-color: transparent;
     position: static;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     margin-top: 20px;
+    border-top: none;
     border-bottom: 6px solid ${props => props.theme.colors.text};
     box-shadow: none;
   }
@@ -56,12 +56,11 @@ const NavWrapper = styled.nav`
 
 const LinkItem = styled(props => <Link {...props} />)`
   color: ${props => props.theme.colors.text};
-  padding: 0.5em 1em;
+  font-weight: 600;
   text-decoration: none;
 
-  .active {
-    color: yellow;
-    border-bottom: 3px solid ${props => props.theme.colors.text};
+  &.active {
+    color: ${props => props.theme.colors.button};
   }
 
   .icon {
@@ -73,6 +72,8 @@ const LinkItem = styled(props => <Link {...props} />)`
   }
 
   @media ${props => props.theme.breakpoints.large} {
+    margin-left: 30px;
+
     .icon {
       display: none;
     }

@@ -6,36 +6,30 @@ import Tags from "../Tags"
 
 const PostCard = ({ title, date, category, tags, slug, featureImage }) => {
   return (
-    <Card to={slug}>
-      <Image
-        fixed={featureImage}
-        style={{ width: "100%", height: 200 }}
-        alt={title}
-      />
-      <div>
-        <h2>{title}</h2>
-        <span className="info">{date}</span>
-      </div>
+    <Card>
+      <LinkArea to={slug}>
+        <Image
+          fixed={featureImage}
+          style={{ width: "100%", height: 200 }}
+          alt={title}
+        />
+        <div>
+          <h2>{title}</h2>
+          <span className="info">{date}</span>
+        </div>
+      </LinkArea>
       <Tags category={category} tags={tags} />
     </Card>
   )
 }
 
-const Card = styled(props => <Link {...props} />)`
-  color: ${props => props.theme.colors.text};
-  grid-template-rows: auto;
+const Card = styled.article`
   display: grid;
+  grid-template-rows: auto;
   gap: 15px;
   padding: 10px;
-  text-decoration: none;
-  cursor: pointer;
   border: 3px solid transparent;
   transition: all 300ms ease-in-out;
-
-  h2 {
-    font-size: 1.125rem;
-    font-weight: 700;
-  }
 
   .info {
     color: ${props => props.theme.colors.secondary};
@@ -46,6 +40,20 @@ const Card = styled(props => <Link {...props} />)`
     border: 3px solid ${props => props.theme.colors.text};
     box-shadow: 6px 6px ${props => props.theme.colors.text};
     transform: translate(-6px, -6px);
+  }
+`
+
+const LinkArea = styled(props => <Link {...props} />)`
+  color: ${props => props.theme.colors.text};
+  display: grid;
+  grid-template-rows: auto;
+  gap: 15px;
+  text-decoration: none;
+  cursor: pointer;
+
+  h2 {
+    font-size: 1.125rem;
+    font-weight: 700;
   }
 `
 

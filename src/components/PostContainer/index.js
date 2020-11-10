@@ -16,10 +16,14 @@ const PostContainer = ({ frontmatter, html }) => {
         {date}
         <Tags category={category} tags={tags} />
       </div>
-      <Image
-        fixed={featureImage.childImageSharp.fixed}
-        style={{ width: "100%", height: 435, margin: "30px 0" }}
-      />
+      {featureImage && (
+        <div className="feature-image">
+          <Image
+            fixed={featureImage.childImageSharp.fixed}
+            style={{ width: "100%", height: "100%" }}
+          />
+        </div>
+      )}
       <PostBody html={html} />
       <ProfileCard />
     </Container>
@@ -33,7 +37,19 @@ const Container = styled.article`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin: 10px 0 30px;
+  }
+
+  .feature-image {
+    margin-bottom: 30px;
+    width: 100%;
+    height: 240px;
+  }
+
+  @media ${props => props.theme.breakpoints.medium} {
+    .feature-image {
+      height: 432px;
+    }
   }
 `
 
