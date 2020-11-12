@@ -13,7 +13,7 @@ const PostContainer = ({ frontmatter, html }) => {
     <Container>
       <Heading>{title}</Heading>
       <div className="info">
-        {date}
+        <p>{date}</p>
         <Tags category={category} tags={tags} />
       </div>
       {featureImage && (
@@ -35,9 +35,13 @@ const Container = styled.article`
     color: ${props => props.theme.colors.secondary};
     font-size: 0.875rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+
     margin: 10px 0 30px;
+
+    p {
+      padding: 0.25em 0.75em;
+    }
   }
 
   .feature-image {
@@ -47,6 +51,16 @@ const Container = styled.article`
   }
 
   @media ${props => props.theme.breakpoints.medium} {
+    .info {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        padding: 0;
+      }
+    }
+
     .feature-image {
       height: 432px;
     }

@@ -30,7 +30,7 @@ const Home = () => {
         <div className="introduction">
           <Heading>Hi, I'm Indra Arianggi</Heading>
           <p className="description">
-            A tech adventurer exploring the vast world of Frontend with React.
+            A tech adventurer exploring the vast world of Front End with React.
           </p>
           <Button
             href="https://www.linkedin.com/in/indraarianggi/"
@@ -49,18 +49,18 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0 15px;
   min-height: 100vh;
 
   .profile-pic {
-    align-self: center;
     margin-bottom: 30px;
     border: 3px solid #2d2d2d;
-    width: 250px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
   }
 
   .description {
-    margin: 20px 0 30px 0;
+    margin: 15px 0 30px 0;
   }
 
   @media ${props => props.theme.breakpoints.medium} {
@@ -70,6 +70,8 @@ const Container = styled.div`
     align-items: center;
 
     .profile-pic {
+      width: 250px;
+      height: 300px;
       margin-bottom: 0;
     }
   }

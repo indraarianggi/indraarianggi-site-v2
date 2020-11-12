@@ -7,8 +7,12 @@ const Heading = ({ children }) => {
 
 const H1 = styled.h1`
   color: ${props => props.theme.colors.text};
-  font-size: 2.125rem;
+  font-size: 1.5rem;
   font-weight: 700;
+
+  @media ${props => props.theme.breakpoints.medium} {
+    font-size: 2.125rem;
+  }
 `
 
 export default Heading

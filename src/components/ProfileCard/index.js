@@ -25,9 +25,9 @@ const ProfileCard = () => {
         />
       </div>
       <div>
-        <p style={{ marginBottom: 30 }}>
+        <p>
           Hi, I'am Indra Arianggi, a tech adventurer exploring the vast world of
-          Frontend with React.
+          Front End with React.
         </p>
         <Button
           href="https://www.linkedin.com/in/indraarianggi/"
@@ -42,7 +42,7 @@ const ProfileCard = () => {
 
 const Card = styled.article`
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto;
   justify-content: center;
   gap: 30px;
   padding: 30px;
@@ -51,17 +51,23 @@ const Card = styled.article`
   box-shadow: 6px 6px ${props => props.theme.colors.text};
 
   .profile-pic {
-    justify-self: center;
-    width: 100px;
-    height: 100px;
+    display: none;
+  }
+
+  p {
+    margin-bottom: 30px;
   }
 
   @media ${props => props.theme.breakpoints.medium} {
+    grid-template-columns: auto 1fr;
     width: 530px;
     margin: 50px auto 0;
-  }
 
-  @media ${props => props.theme.breakpoints.large} {
+    .profile-pic {
+      display: block;
+      width: 100px;
+      height: 100px;
+    }
   }
 `
 
