@@ -98,7 +98,7 @@ export const tagPostsQuery = graphql`
         node {
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYY")
+            date(formatString: "MMMM DD, YYYY")
             category
             tags
             featureImage {

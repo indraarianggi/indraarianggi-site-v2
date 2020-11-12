@@ -30,8 +30,7 @@ const Home = () => {
         <div className="introduction">
           <Heading>Hi, I'm Indra Arianggi</Heading>
           <p className="description">
-            A Full Stack Web Developer, currently focused on exploring the world
-            of Front-end with React.
+            A tech adventurer exploring the vast world of Frontend with React.
           </p>
           <Button
             href="https://www.linkedin.com/in/indraarianggi/"

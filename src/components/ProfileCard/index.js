@@ -26,8 +26,8 @@ const ProfileCard = () => {
       </div>
       <div>
         <p style={{ marginBottom: 30 }}>
-          I'm Indra Arianggi, Full Stack Web Developer, currently focused on
-          exploring the world of Front-end with React.
+          Hi, I'am Indra Arianggi, a tech adventurer exploring the vast world of
+          Frontend with React.
         </p>
         <Button
           href="https://www.linkedin.com/in/indraarianggi/"

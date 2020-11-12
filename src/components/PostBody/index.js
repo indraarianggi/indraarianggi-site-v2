@@ -16,6 +16,10 @@ const Container = styled.div`
     margin-top: 2rem;
   }
 
+  p {
+    line-height: 1.75em;
+  }
+
   a {
     color: ${props => props.theme.colors.button};
     text-decoration: none;
