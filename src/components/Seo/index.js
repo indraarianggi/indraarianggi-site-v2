@@ -10,14 +10,7 @@ import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Seo = ({
-  title,
-  description,
-  pathname,
-  image,
-  themeColor,
-  isArticle,
-}) => {
+const Seo = ({ title, description, pathname, image, isArticle, themeMode }) => {
   // Querying data from siteMetadata
   const data = useStaticQuery(graphql`
     query {
@@ -27,7 +20,6 @@ const Seo = ({
           defaultDescription: description
           siteUrl: url
           defaultImage: image
-          defaultThemeColor: themeColor
         }
       }
     }
@@ -38,7 +30,6 @@ const Seo = ({
     defaultDescription,
     siteUrl,
     defaultImage,
-    defaultThemeColor,
   } = data.site.siteMetadata
 
   const seo = {
@@ -46,7 +37,7 @@ const Seo = ({
     description: description || defaultDescription,
     url: `${siteUrl}${pathname || "/"}`,
     image: `${siteUrl}${image || defaultImage}`,
-    themeColor: themeColor || defaultThemeColor,
+    themeColor: themeMode === "dark" ? "#2D2D2D" : "#FFF4CB",
   }
 
   return (

@@ -5,7 +5,6 @@ module.exports = {
       "Personal site by Indra Arianggi. Contains a profile, work portfolios, and blog articles about technology, work, and hobbies.",
     url: "https://www.indraarianggi.com",
     image: "/indraarianggi.jpg",
-    themeColor: "#FFF4CB",
     year: "2020",
   },
   plugins: [
