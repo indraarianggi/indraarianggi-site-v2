@@ -10,12 +10,14 @@ import Footer from "../Footer"
 import Seo from "../Seo"
 
 const Layout = ({ children, seo }) => {
+  const [isLoading, setIsLoading] = useState(true)
   const [themeMode, setThemeMode] = useState(undefined)
 
   useEffect(() => {
     const root = window.document.documentElement
     const initialThemeMode = root.style.getPropertyValue("--initial-theme-mode")
     setThemeMode(initialThemeMode)
+    setIsLoading(false)
   }, [])
 
   const handleThemeModeChange = prevThemeMode => {
@@ -25,6 +27,10 @@ const Layout = ({ children, seo }) => {
     const root = window.document.documentElement
     root.style.setProperty("--initial-theme-mode", newThemeMode)
     window.localStorage.setItem("indraarianggi-site-theme", newThemeMode)
+  }
+
+  if (isLoading) {
+    return null
   }
 
   return (
