@@ -31,7 +31,7 @@ const Layout = ({ children, seo }) => {
     <ThemeProvider theme={{ ...theme, colors: { ...theme.colors[themeMode] } }}>
       <GlobalStyles />
       <Container>
-        <Seo {...seo} />
+        <Seo {...seo} themeMode={themeMode} />
         <Navigation
           themeMode={themeMode}
           handleThemeModeChange={handleThemeModeChange}
@@ -52,14 +52,13 @@ const GlobalStyles = createGlobalStyle`
     }
 
     :root {
-      --color-background: ${props => props.theme.colors.background};
       --color-text-body: ${props => props.theme.colors.textBody};
       --color-text-heading: ${props => props.theme.colors.textHeading};
       --color-text-secondary: ${props => props.theme.colors.textSecondary};
       --color-text-link: ${props => props.theme.colors.textLink};
       --color-text-button: ${props => props.theme.colors.textButton};
+      --color-background: ${props => props.theme.colors.background};
       --color-button: ${props => props.theme.colors.button};
-      --color-text-button: ${props => props.theme.colors.textButton};
       --color-shadow: ${props => props.theme.colors.shadow};
       --color-border: ${props => props.theme.colors.border};
       --font-family: ${props => props.theme.fonts.main};
