@@ -32,7 +32,7 @@ const PostContainer = ({ frontmatter, html }) => {
 
 const Container = styled.article`
   .info {
-    color: ${props => props.theme.colors.secondary};
+    color: var(--color-text-secondary);
     font-size: 0.875rem;
     display: flex;
     flex-direction: column;

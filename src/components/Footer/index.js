@@ -30,12 +30,12 @@ const FooterWrapper = styled.footer`
   align-items: center;
   min-height: 84px;
   margin-bottom: 65px;
-  border-top: 6px solid ${props => props.theme.colors.text};
+  border-top: 6px solid var(--color-border);
   position: relative;
 
   &::before {
     content: "";
-    background-color: ${props => props.theme.colors.text};
+    background-color: var(--color-border);
     position: absolute;
     top: 2px;
     left: 0;

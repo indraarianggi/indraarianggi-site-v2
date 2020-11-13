@@ -26,8 +26,8 @@ const ProfileCard = () => {
       </div>
       <div>
         <p>
-          Hi, I'am Indra Arianggi, a tech adventurer exploring the vast world of
-          Front End with React.
+          Hi, I'am Indra Arianggi, a tech adventurer who begins to explore the
+          vast world of Front End using React.
         </p>
         <Button
           href="https://www.linkedin.com/in/indraarianggi/"
@@ -47,8 +47,8 @@ const Card = styled.article`
   gap: 30px;
   padding: 30px;
   margin-top: 50px;
-  border: 3px solid ${props => props.theme.colors.text};
-  box-shadow: 6px 6px ${props => props.theme.colors.text};
+  border: 3px solid var(--color-border);
+  box-shadow: 6px 6px var(--color-shadow);
 
   .profile-pic {
     display: none;

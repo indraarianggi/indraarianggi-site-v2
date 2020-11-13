@@ -32,19 +32,19 @@ const Card = styled.article`
   transition: all 300ms ease-in-out;
 
   .info {
-    color: ${props => props.theme.colors.secondary};
+    color: var(--color-text-secondary);
     font-size: 0.875rem;
   }
 
   &:hover {
-    border: 3px solid ${props => props.theme.colors.text};
-    box-shadow: 6px 6px ${props => props.theme.colors.text};
+    border: 3px solid var(--color-border);
+    box-shadow: 6px 6px var(--color-shadow);
     transform: translate(-6px, -6px);
   }
 `
 
 const LinkArea = styled(props => <Link {...props} />)`
-  color: ${props => props.theme.colors.text};
+  color: var(--color-text-heading);
   display: grid;
   grid-template-rows: auto;
   gap: 15px;

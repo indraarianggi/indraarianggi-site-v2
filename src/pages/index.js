@@ -30,7 +30,8 @@ const Home = () => {
         <div className="introduction">
           <Heading>Hi, I'm Indra Arianggi</Heading>
           <p className="description">
-            A tech adventurer exploring the vast world of Front End with React.
+            A tech adventurer who begins to explore the vast world of Front End
+            using React.
           </p>
           <Button
             href="https://www.linkedin.com/in/indraarianggi/"
@@ -54,7 +55,7 @@ const Container = styled.div`
 
   .profile-pic {
     margin-bottom: 30px;
-    border: 3px solid #2d2d2d;
+    border: 3px solid var(--color-border);
     width: 100px;
     height: 100px;
   }

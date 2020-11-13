@@ -57,28 +57,15 @@ const PageTitle = styled.h1`
 `
 
 const TagName = styled(props => <Link {...props} />)`
-  background-color: ${props => props.theme.colors.button};
-  color: ${props => props.theme.colors.background};
+  background-color: var(--color-text-link);
+  color: var(--color-background);
   text-decoration: none;
   padding: 0 0.5em;
   transition: all 300ms ease-in-out;
 
-  /* &:after {
-    content: "x";
-    padding-left: 0.5em;
-    margin-left: 0.5em;
-    border-left: 1px solid ${props => props.theme.colors.background};
-    display: none;
-    transition: all 300ms ease-in-out;
-  } */
-
   &:hover {
     text-decoration: line-through;
     cursor: pointer;
-
-    /* &:after {
-      display: inline-block;
-    } */
   }
 `
 

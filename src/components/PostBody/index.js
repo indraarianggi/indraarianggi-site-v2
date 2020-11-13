@@ -21,12 +21,14 @@ const Container = styled.div`
   }
 
   a {
-    color: ${props => props.theme.colors.button};
+    color: var(--color-text-link);
     text-decoration: none;
+    transition: all 300ms ease-in-out;
   }
 
   a:hover {
-    text-decoration: underline;
+    color: var(--color-background);
+    background-color: var(--color-text-link);
   }
 
   ul,
@@ -50,7 +52,7 @@ const Container = styled.div`
   hr {
     border: 0;
     height: 1px;
-    background: ${props => props.theme.colors.text};
+    background: var(--color-border);
     opacity: 0.1;
     margin-top: 2rem;
   }
@@ -72,7 +74,7 @@ const Container = styled.div`
   table,
   th,
   td {
-    border: 1px solid ${props => props.theme.colors.text};
+    border: 1px solid var(--color-text-body);
   }
 
   th,

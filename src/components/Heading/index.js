@@ -6,7 +6,7 @@ const Heading = ({ children }) => {
 }
 
 const H1 = styled.h1`
-  color: ${props => props.theme.colors.text};
+  color: var(--color-text-heading);
   font-size: 1.5rem;
   font-weight: 700;
 

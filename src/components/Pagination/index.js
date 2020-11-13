@@ -32,20 +32,20 @@ const PaginationWrapper = styled.div`
 `
 
 const PaginationItem = styled(props => <Link {...props} />)`
-  color: ${props => props.theme.colors.secondary};
+  color: var(--color-text-secondary);
   background-color: transparent;
   padding: 0.5rem 1rem;
   text-decoration: none;
 
   &.active {
-    color: ${props => props.theme.colors.button};
+    color: var(--color-text-link);
     font-weight: 600;
     pointer-events: none;
   }
 
   &:hover {
-    color: ${props => props.theme.colors.background};
-    background-color: ${props => props.theme.colors.button};
+    color: var(--color-background);
+    background-color: var(--color-text-link);
   }
 `
 

@@ -20,7 +20,7 @@ const Container = styled.div`
 `
 
 const TagItem = styled(props => <Link {...props} />)`
-  color: ${props => props.theme.colors.secondary};
+  color: var(--color-text-secondary);
   font-size: 0.875rem;
   text-decoration: none;
   padding: 0.25em 0.75em;
@@ -28,8 +28,8 @@ const TagItem = styled(props => <Link {...props} />)`
   transition: all 300ms ease-in-out;
 
   &:hover {
-    color: ${props => props.theme.colors.background};
-    background-color: ${props => props.theme.colors.button};
+    color: var(--color-background);
+    background-color: var(--color-text-link);
   }
 `
 

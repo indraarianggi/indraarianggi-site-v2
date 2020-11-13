@@ -1,28 +1,51 @@
+/**
+ * Resources:
+ * https://joshwcomeau.com/gatsby/dark-mode/
+ *
+ */
+
 import React from "react"
-import { createGlobalStyle, ThemeProvider } from "styled-components"
-import Theme from "./src/themes/theme"
-import "prismjs/themes/prism-okaidia.css"
-import "prismjs/plugins/line-numbers/prism-line-numbers.css"
-import "./src/styles/prism-code-style.css"
 
-const GlobalStyles = createGlobalStyle`
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+const MagicScriptTag = () => {
+  const codeToRunOnClient = `
+        (function() {
+            function getInitialThemeMode() {
+                const persistedThemePreference = window.localStorage.getItem(
+                  "indraarianggi-site-theme"
+                )
+                const hasPersistedPreference = typeof persistedThemePreference === "string"
+            
+                // If the user has explicitly chosen light or dark,
+                // let's use it. Otherwise, this value will be null.
+                if (hasPersistedPreference) {
+                  return persistedThemePreference
+                }
+            
+                // If they haven't been explicit, let's check the media query
+                const mql = window.matchMedia("(prefers-color-scheme: dark)")
+                const hasMediaQueryPreference = typeof mql.matches === "boolean"
+            
+                if (hasMediaQueryPreference) {
+                  return mql.matches ? "dark" : "light"
+                }
+            
+                // If they are using a browser/OS that doesn't support color themes,
+                // let's default to 'light'.
+                return "light"
+              }
 
-    body, html {
-        background-color: ${props => props.theme.colors.background};
-        color: ${props => props.theme.colors.text};
-        font-family: ${props => props.theme.fonts.main};
-        font-weight: 500;
-    }
-`
+              const themeMode = getInitialThemeMode();
 
-export const wrapRootElement = ({ element }) => (
-  <ThemeProvider theme={Theme}>
-    <GlobalStyles />
-    {element}
-  </ThemeProvider>
-)
+              const root = document.documentElement;
+
+              root.style.setProperty('--initial-theme-mode', themeMode);
+        })()
+    `
+
+  // eslint-disable-next-line react/no-danger
+  return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />
+}
+
+export const onRenderBody = ({ setPreBodyComponents }) => {
+  setPreBodyComponents(<MagicScriptTag />)
+}

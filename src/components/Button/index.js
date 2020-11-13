@@ -24,8 +24,8 @@ const Button = ({ children, href, linkType, shadow }) => {
 }
 
 const ButtonInternal = styled(props => <Link {...props} />)`
-  color: ${props => props.theme.colors.text};
-  background-color: ${props => props.theme.colors.button};
+  color: var(--color-text-button);
+  background-color: var(--color-button);
   font-weight: 600;
   display: inline-block;
   padding: 0.5em 1em;
@@ -33,7 +33,7 @@ const ButtonInternal = styled(props => <Link {...props} />)`
   transition: all 300ms ease-in-out;
 
   &.shadow {
-    box-shadow: 6px 6px ${props => props.theme.colors.text};
+    box-shadow: 6px 6px var(--color-shadow);
   }
 
   &.shadow:hover {
@@ -43,8 +43,8 @@ const ButtonInternal = styled(props => <Link {...props} />)`
 `
 
 const ButtonExternal = styled.a`
-  color: ${props => props.theme.colors.text};
-  background-color: ${props => props.theme.colors.button};
+  color: var(--color-text-button);
+  background-color: var(--color-button);
   font-weight: 600;
   display: inline-block;
   padding: 0.5em 1em;
@@ -52,7 +52,7 @@ const ButtonExternal = styled.a`
   transition: all 300ms ease-in-out;
 
   &.shadow {
-    box-shadow: 6px 6px ${props => props.theme.colors.text};
+    box-shadow: 6px 6px var(--color-shadow);
   }
 
   &:hover {
