@@ -51,7 +51,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 0 15px;
-  min-height: 100vh;
+  min-height: 90vh;
 
   .profile-pic {
     margin-bottom: 30px;
