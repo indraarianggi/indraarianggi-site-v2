@@ -46,7 +46,7 @@ exports.createPages = async ({ actions, graphql }) => {
   // Creating blog page with pagination
   Array.from({ length: blogNumPages }).forEach((_, i) => {
     actions.createPage({
-      path: i === 0 ? "/blog" : `/blog/page/${i + 1}`,
+      path: i === 0 ? "/" : `/page/${i + 1}`,
       component: path.resolve("./src/templates/Blog.js"),
       context: {
         limit: postsPerPage,

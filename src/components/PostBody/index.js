@@ -17,7 +17,7 @@ const Container = styled.div`
   }
 
   p {
-    line-height: 1.75em;
+    line-height: 1.875em;
   }
 
   a {

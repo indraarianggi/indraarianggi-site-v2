@@ -60,7 +60,8 @@ module.exports = {
       options: {
         fonts: [
           `roboto mono`,
-          `poppins\:500,500i,600,700`, // you can also specify font weights and styles
+          `nunito\:400,400i,700,800,900`,
+          `montserrat\:500,500i,700,700i`, // you can also specify font weights and styles
         ],
         display: "swap",
       },

@@ -22,8 +22,9 @@ const Footer = () => {
 }
 
 const FooterWrapper = styled.footer`
-  font-size: 14px;
-  font-weight: 600;
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  font-size: 0.875rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -46,6 +47,10 @@ const FooterWrapper = styled.footer`
   @media ${props => props.theme.breakpoints.medium} {
     flex-direction: row;
     justify-content: space-between;
+
+    p {
+      margin-left: 1em;
+    }
   }
 
   @media ${props => props.theme.breakpoints.large} {

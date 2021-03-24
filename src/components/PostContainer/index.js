@@ -25,7 +25,7 @@ const PostContainer = ({ frontmatter, html }) => {
         </div>
       )}
       <PostBody html={html} />
-      <ProfileCard />
+      {/* <ProfileCard /> */}
     </Container>
   )
 }
@@ -33,15 +33,12 @@ const PostContainer = ({ frontmatter, html }) => {
 const Container = styled.article`
   .info {
     color: var(--color-text-secondary);
-    font-size: 0.875rem;
+    font-size: 0.75rem;
+    font-weight: 700;
     display: flex;
-    flex-direction: column;
-
-    margin: 10px 0 30px;
-
-    p {
-      padding: 0.25em 0.75em;
-    }
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 20px;
   }
 
   .feature-image {
@@ -51,16 +48,6 @@ const Container = styled.article`
   }
 
   @media ${props => props.theme.breakpoints.medium} {
-    .info {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-
-      p {
-        padding: 0;
-      }
-    }
-
     .feature-image {
       height: 432px;
     }

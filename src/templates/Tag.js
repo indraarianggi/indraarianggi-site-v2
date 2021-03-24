@@ -34,7 +34,8 @@ const Tag = ({ data, pageContext, location }) => {
     <Layout seo={seo}>
       <PageTitle>
         <span className="category">{category}</span> posts with{" "}
-        <TagName to={`/${category}`}>{tag}</TagName> tag.
+        <TagName to={`/${category === "blog" ? "" : category}`}>#{tag}</TagName>{" "}
+        tag.
       </PageTitle>
       <PostListContainer posts={posts} />
       <Pagination
@@ -48,6 +49,7 @@ const Tag = ({ data, pageContext, location }) => {
 }
 
 const PageTitle = styled.h1`
+  font-family: var(--font-secondary);
   font-size: 1rem;
   margin-bottom: 10px;
 
@@ -85,7 +87,7 @@ export const tagPostsQuery = graphql`
         node {
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMM DD, YYYY")
             category
             tags
             featureImage {

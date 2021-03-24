@@ -56,6 +56,7 @@ const Card = styled.article`
 
   p {
     margin-bottom: 30px;
+    line-height: 1.875em;
   }
 
   @media ${props => props.theme.breakpoints.medium} {

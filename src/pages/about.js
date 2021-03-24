@@ -62,6 +62,7 @@ const Container = styled.div`
 
   .description {
     margin: 15px 0 30px 0;
+    line-height: 1.875em;
   }
 
   @media ${props => props.theme.breakpoints.medium} {

@@ -1,6 +1,7 @@
 export default {
   fonts: {
-    main: "Poppins, sans-serif",
+    heading: "Nunito, sans-serif",
+    main: "Montserrat, sans-serif",
     code: "Roboto mono, monospace",
   },
   breakpoints: {

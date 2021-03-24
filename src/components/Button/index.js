@@ -26,7 +26,7 @@ const Button = ({ children, href, linkType, shadow }) => {
 const ButtonInternal = styled(props => <Link {...props} />)`
   color: var(--color-text-button);
   background-color: var(--color-button);
-  font-weight: 600;
+  font-weight: 700;
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
@@ -45,7 +45,7 @@ const ButtonInternal = styled(props => <Link {...props} />)`
 const ButtonExternal = styled.a`
   color: var(--color-text-button);
   background-color: var(--color-button);
-  font-weight: 600;
+  font-weight: 700;
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;

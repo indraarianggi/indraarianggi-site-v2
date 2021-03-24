@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
-  faHome,
+  faUser,
   faFileAlt,
   faLaptopCode,
 } from "@fortawesome/free-solid-svg-icons"
@@ -12,16 +12,16 @@ const Navigation = ({ themeMode, handleThemeModeChange }) => {
   return (
     <NavWrapper>
       <LinkItem to="/" activeClassName="active">
-        <FontAwesomeIcon icon={faHome} size="lg" className="icon" />
-        <span className="text">Home</span>
-      </LinkItem>
-      <LinkItem to="/blog" activeClassName="active" partiallyActive={true}>
         <FontAwesomeIcon icon={faFileAlt} size="lg" className="icon" />
         <span className="text">Blog</span>
       </LinkItem>
       <LinkItem to="/work" activeClassName="active" partiallyActive={true}>
         <FontAwesomeIcon icon={faLaptopCode} size="lg" className="icon" />
         <span className="text">Work</span>
+      </LinkItem>
+      <LinkItem to="/about" activeClassName="active">
+        <FontAwesomeIcon icon={faUser} size="lg" className="icon" />
+        <span className="text">About</span>
       </LinkItem>
       <ThemeButton
         className={themeMode === "dark" ? "dark" : "light"}
@@ -59,6 +59,7 @@ const NavWrapper = styled.nav`
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    padding: 0 1em;
     margin-top: 20px;
     border-top: none;
     border-bottom: 6px solid var(--color-border);
@@ -68,7 +69,9 @@ const NavWrapper = styled.nav`
 
 const LinkItem = styled(props => <Link {...props} />)`
   color: var(--color-text-body);
-  font-weight: 600;
+  font-family: var(--font-secondary);
+  font-size: 0.875rem;
+  font-weight: 700;
   text-decoration: none;
 
   &.active {

@@ -13,12 +13,12 @@ const PostCard = ({ title, date, category, tags, slug, featureImage }) => {
           style={{ width: "100%", height: 200 }}
           alt={title}
         />
-        <div>
-          <h2>{title}</h2>
-          <span className="info">{date}</span>
-        </div>
+        <h2>{title}</h2>
       </LinkArea>
-      <Tags category={category} tags={tags} />
+      <div className="info">
+        <span>{date}</span>
+        <Tags category={category} tags={tags} />
+      </div>
     </Card>
   )
 }
@@ -26,14 +26,18 @@ const PostCard = ({ title, date, category, tags, slug, featureImage }) => {
 const Card = styled.article`
   display: grid;
   grid-template-rows: auto;
-  gap: 15px;
+  gap: 10px;
   padding: 10px;
   border: 3px solid transparent;
   transition: all 300ms ease-in-out;
 
   .info {
     color: var(--color-text-secondary);
-    font-size: 0.875rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &:hover {
@@ -47,13 +51,14 @@ const LinkArea = styled(props => <Link {...props} />)`
   color: var(--color-text-heading);
   display: grid;
   grid-template-rows: auto;
-  gap: 15px;
+  gap: 10px;
   text-decoration: none;
   cursor: pointer;
 
   h2 {
-    font-size: 1.125rem;
-    font-weight: 700;
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    font-weight: 800;
   }
 `
 

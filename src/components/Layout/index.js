@@ -61,13 +61,14 @@ const GlobalStyles = createGlobalStyle`
       --color-button: ${props => props.theme.colors.button};
       --color-shadow: ${props => props.theme.colors.shadow};
       --color-border: ${props => props.theme.colors.border};
-      --font-family: ${props => props.theme.fonts.main};
+      --font-primary: ${props => props.theme.fonts.main};
+      --font-secondary: ${props => props.theme.fonts.heading};
     }
 
     body, html {
         background-color: var(--color-background);
         color: var(--color-text-body);
-        font-family: var(--font-family);
+        font-family: var(--font-primary);
         font-weight: 500;
     }
 `

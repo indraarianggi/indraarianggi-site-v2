@@ -7,7 +7,7 @@ const Tags = ({ category, tags }) => {
     <Container>
       {tags.map((tag, index) => (
         <TagItem key={index} to={`/${category}/tag/${tag}`}>
-          {tag}
+          #{tag}
         </TagItem>
       ))}
     </Container>
@@ -21,7 +21,6 @@ const Container = styled.div`
 
 const TagItem = styled(props => <Link {...props} />)`
   color: var(--color-text-secondary);
-  font-size: 0.875rem;
   text-decoration: none;
   padding: 0.25em 0.75em;
   cursor: pointer;
